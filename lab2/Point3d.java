@@ -1,7 +1,9 @@
 public class Point3d {
+    //поля экземпляра
     private double xCoord; //координата x
     private double yCoord; //координата y
     private double zCoord; //координата z
+    //конструктор
     public Point3d ( double x, double y, double z) { //создание нового объекта Point3d с 3 значениями с плавающей точкой
         xCoord = x;
         yCoord = y;
