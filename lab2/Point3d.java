@@ -31,7 +31,8 @@ public class Point3d {
         zCoord = val;
     }
     public boolean compare (Point3d a) { //сравнение текущей точки с точкой a
-        if (a.getX() == xCoord & a.getY() == yCoord & a.getZ() == zCoord) return true; else return false;
+        if (a.getX() == xCoord & a.getY() == yCoord & a.getZ() == zCoord) return true; 
+        else return false;
     }
     public double distanceTo (Point3d a) { //вычисление расстояния между текущей точкой и точкой a
         return (Math.sqrt(Math.pow((a.getX()-xCoord), 2) + Math.pow((a.getY()-yCoord), 2) + Math.pow((a.getZ()-zCoord), 2)));
