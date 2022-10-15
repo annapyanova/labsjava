@@ -1,31 +1,17 @@
-public class Point3d {
+public class Point3d extends Point2d{
     //поля экземпляра
-    private double xCoord; //координата x
-    private double yCoord; //координата y
     private double zCoord; //координата z
     //конструктор
-    public Point3d ( double x, double y, double z) { //создание нового объекта Point3d с 3 значениями с плавающей точкой
-        xCoord = x;
-        yCoord = y;
+    public Point3d (double x, double y, double z) { //создание нового объекта Point3d с 3 значениями с плавающей точкой
+        super (x,y);
         zCoord = z;
     }
     public Point3d () { //значения (0.0, 0.0, 0.0) по умолчанию
-        this(0, 0, 0);
-    }
-    public double getX () { //получение значения координаты x
-        return xCoord;
-    }
-    public double getY () { //получение значения координаты y
-        return yCoord;
+        super(0, 0);
+        this.zCoord = 0;
     }
     public double getZ () { //получение значения координаты z
         return zCoord;
-    }
-    public void setX ( double val) { //изменение значения координаты x
-        xCoord = val;
-    }
-    public void setY ( double val) { //изменение значения координаты y
-        yCoord = val;
     }
     public void setZ ( double val) { //изменение значения координаты z
         zCoord = val;
