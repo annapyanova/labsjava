@@ -24,7 +24,6 @@ public class AStarState
     {
         if (map == null)
             throw new NullPointerException("map cannot be null");
-
         this.map = map;
     }
 
