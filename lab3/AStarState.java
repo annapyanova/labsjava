@@ -47,7 +47,8 @@ public class AStarState
      **/
     public Waypoint getMinOpenWaypoint()
     {
-        if (numOpenWaypoints() == 0) return null;
+        if (numOpenWaypoints() == 0) 
+            return null;
             
         Waypoint minWaypoint = null;
         float mn = Float.MAX_VALUE;
@@ -73,11 +74,11 @@ public class AStarState
      **/
     public boolean addOpenWaypoint(Waypoint newWP)
     {
-        Location location = newWP.getLocation();
-        if (openWaypoints.containsKey(location) && newWP.getPreviousCost() > openWaypoints.get(location).getPreviousCost()) 
+        Location loc = newWP.getLocation();
+        if (openWaypoints.containsKey(loc) && newWP.getPreviousCost() > openWaypoints.get(loc).getPreviousCost()) 
             return false;
         else {
-            openWaypoints.put(location, newWP);
+            openWaypoints.put(loc, newWP);
             return true;
         } 
     }
@@ -97,9 +98,8 @@ public class AStarState
      **/
     public void closeWaypoint(Location loc)
     {
-        Waypoint wpToClose = openWaypoints.remove(loc);
-        if (wpToClose != null) {
-            closeWaypoints.put(loc, wpToClose);
-        }
+        Waypoint new_close = openWaypoints.remove(loc);
+        if (new_close != null)
+            closeWaypoints.put(loc, new_close);
     }
 }
