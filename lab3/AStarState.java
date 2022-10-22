@@ -74,11 +74,12 @@ public class AStarState
     public boolean addOpenWaypoint(Waypoint newWP)
     {
         Location location = newWP.getLocation();
-        if (!openWaypoints.containsKey(location) || newWP.getPreviousCost() < openWaypoints.get(location).getPreviousCost()) {
+        if (openWaypoints.containsKey(location) && newWP.getPreviousCost() > openWaypoints.get(location).getPreviousCost()) 
+            return false;
+        else {
             openWaypoints.put(location, newWP);
             return true;
-        }
-        return false;
+        } 
     }
 
     /**
