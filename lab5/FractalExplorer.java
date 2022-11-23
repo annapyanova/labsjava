@@ -1,4 +1,5 @@
 package lab5;
+
 import java.awt.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -105,7 +106,6 @@ public class FractalExplorer {
     private class ResetActionListener implements ActionListener {
         @Override
         public void actionPerformed(ActionEvent e) {
-            //сбро
             displayImage.clearImage();
             fractalGenerator.getInitialRange(complexPlaneRange);
             drawFractal();
