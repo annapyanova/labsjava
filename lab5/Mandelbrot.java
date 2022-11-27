@@ -36,4 +36,9 @@ public class Mandelbrot extends FractalGenerator {
             return -1;
         else return count;
     }
+
+    @Override
+    public String toString() {
+        return "Mandelbrot";
+    }
 }
