@@ -22,8 +22,8 @@ public class FractalExplorer {
 
     //конструктор, сохраняющий размер отображения, инициализирующий 
     //объекты диапазона и фрактального генератора
-    private FractalExplorer(int sizeDisplay) {
-        this.displaySize = sizeDisplay;
+    private FractalExplorer(int displaySize) {
+        this.displaySize = displaySize;
         this.fractalGenerator = new Mandelbrot();
         this.complexPlaneRange = new Rectangle2D.Double(0, 0, 0, 0);
         fractalGenerator.getInitialRange(this.complexPlaneRange);

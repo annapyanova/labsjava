@@ -21,7 +21,7 @@ public class JImageDisplay extends JComponent {
         g.drawImage(picture, 0, 0, picture.getWidth(), picture.getHeight(), null);
     }
 
-    //метод. устанавливающий каждый пиксель в чёрный цвет
+    //метод, устанавливающий каждый пиксель в чёрный цвет
     public void clearImage() {
         for (int i = 0; i < picture.getWidth(); i++) {
             for (int j = 0; j < picture.getHeight(); j++) {
@@ -30,7 +30,7 @@ public class JImageDisplay extends JComponent {
         }
     }
 
-    //метод. устанавливающий пиксель в определённый цвет
+    //метод, устанавливающий пиксель в определённый цвет
     public void drawPixel(int x, int y, int rgbColor) {
         picture.setRGB(x, y, rgbColor);
     }
