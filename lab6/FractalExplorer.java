@@ -25,8 +25,8 @@ public class FractalExplorer {
 
     //конструктор, сохраняющий размер отображения, инициализирующий 
     //объекты диапазона и фрактального генератора
-    private FractalExplorer(int sizeDisplay) {
-        this.displaySize = sizeDisplay;
+    private FractalExplorer(int displaySize) {
+        this.displaySize = displaySize;
         this.fractalGenerator = new Mandelbrot();
         this.complexPlaneRange = new Rectangle2D.Double(0, 0, 0, 0);
         fractalGenerator.getInitialRange(this.complexPlaneRange);
@@ -77,9 +77,10 @@ public class FractalExplorer {
     private void drawFractal() {
         enableUI(false); //отключение GUI во время рисования
         rowsRemaining = displaySize;
+        //для каждой строки создается рабочий объект
         for (int i = 0; i < displaySize; i++) {
             FractalWorker curRow = new FractalWorker(i);
-            curRow.execute();
+            curRow.execute(); //запуск задачи в фоновом режиме
         }
     }
 
@@ -162,7 +163,7 @@ public class FractalExplorer {
             this.yCoord = yCoord;
         }
 
-        //выполнение длительной задачи
+        //выполнение длительной задачи в фоновом потоке
         @Override
         public Object doInBackground() throws Exception {
             colors = new int[displaySize];
