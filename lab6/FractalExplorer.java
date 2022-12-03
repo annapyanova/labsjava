@@ -53,7 +53,7 @@ public class FractalExplorer {
         comboBox.addItem(new BurningShip());
         comboBox.addActionListener(new ComboActionListener());
 
-        //размещение панелей
+        //размещение содержимого панелей
         JPanel jPanelFractal = new JPanel();
         JPanel jPanelButtons = new JPanel();
         jPanelFractal.add(label, BorderLayout.CENTER);
