@@ -5,9 +5,9 @@ import java.net.*;
 //создание нескольких потоков для обработки URL-адресов с корнем по указанному URL-адресу
 public class Crawler {
     private URLPool pool;
-    
     public int countThreads = 4; //кол-во потоков
-	//включение протокола в корневой URL (упрощение проверки посещённых URL)
+	
+	//добавление протокола в корневой URL (упрощение проверки посещённых URL)
     public Crawler(String root, int max) throws MalformedURLException {
 		pool = new URLPool(max);
 		URL rootURL = new URL(root);
@@ -38,7 +38,7 @@ public class Crawler {
 
     //запуск сканера, сканирующего ссылки, начиная с корневого URL
     public static void main(String[] args) {
-		//оповещение пользователя о его синксической ошибке
+		//оповещение пользователя о его синтаксической ошибке
 		if (args.length < 2 || args.length > 5) {
 	    	System.err.println("Usage: java Crawler <URL> <depth> " +
 			    "<patience> -t <threads>");
